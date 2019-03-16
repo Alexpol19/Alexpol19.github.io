@@ -3,4 +3,4 @@
 Мое Портфолио
 
 
-[Первый проект(html,css,js,jquery)](https://alexpol19.github.io/EO/ "English Online")
+[Первый проект](https://alexpol19.github.io/EO/ "English Online") - Верстка на чистом html,css,js/jquery
