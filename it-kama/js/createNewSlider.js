@@ -40,7 +40,9 @@ function Slider(){
 
 
       // добавление новых элментов в массив
-      this.images.push('https://cdn.humoraf.ru/wp-content/uploads/2017/08/23-14.jpg');
+      this.images.push('https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500');
+      this.images.push('https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+      this.images.push('http://images5.fanpop.com/image/photos/29800000/Blue-Rose-roses-29859433-449-300.jpg');
       this.images.push('https://bipbap.ru/wp-content/uploads/2017/10/0_8eb56_842bba74_XL-640x400.jpg');
       this.images.push('https://mirpozitiva.ru/uploads/posts/2017-04/medium/1492620921_06.jpg');
       this.images.push('https://klike.net/uploads/posts/2019-03/1551516106_1.jpg');
