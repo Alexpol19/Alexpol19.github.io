@@ -8,6 +8,8 @@
 2. [Второй проект](https://alexpol19.github.io/Burgers/ "Burgers") - Верстка используя Sass вместо css
 
 3. [Третий проект](https://alexpol19.github.io/Piroll/ "Piroll") - Верстка используя Sass, pug(синтаксис + деление страницы на блоки отдельными файлами), Bootstrap v4.
+4. [Тестовое задание в одну из компаний](https://alexpol19.github.io/SimpleatTestWork/ "SimpleatTestWork")
+5. [слайдер нга js](https://alexpol19.github.io/it-kama/ "it-kama")
 
 ### Описание достижений в проектах:
 1. В первом проекте применял все что изучил по html,css. Javascript просто подстраивал под себя.
