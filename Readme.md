@@ -1,5 +1,12 @@
 
 # Полюхович Алексей
+
+## Портфолио React: 
+
+1. [Первый проект](https://github.com/Alexpol19/Admin-Panel "Admin Panel") - React+nodejs+mongodb
+
+2. [Второй проект](https://github.com/Alexpol19/Clone-instagram "Clone Instagram") - Верстка на React+api
+
 ## Портфолио Вёрстка:
 
 
@@ -9,11 +16,4 @@
 
 3. [Третий проект](https://alexpol19.github.io/Piroll/ "Piroll") - Верстка используя Sass, pug(синтаксис + деление страницы на блоки отдельными файлами), Bootstrap v4.
 4. [Тестовое задание в одну из компаний](https://alexpol19.github.io/SimpleatTestWork/ "SimpleatTestWork")
-
-## Портфолио React: 
-
-1. [Первый проект](https://github.com/Alexpol19/Admin-Panel "Admin Panel") - React+nodejs+mongodb
-
-2. [Второй проект](https://github.com/Alexpol19/Clone-instagram "Clone Instagram") - Верстка на React+api
-
 
