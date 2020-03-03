@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html  lang="ru">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta http-equiv='cache-control' content='no-cache'/>
+        <title>Стройбат</title>
+            <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.css"/>
+    </head>
+    <body >
+        <!-- Modal confirm delete product-->
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteProduct" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="deleteProduct">Удалить <span class="product-name"></span>?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary confirm-delete" data-product-id="" data-category-id="">Удалить</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Отменить</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- Modal Get New product-->
+        <div class="modal fade" id="getProductNew" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel1">Новый товар</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Название</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Название">
+                                <!-- <small id="emailHelp" class="form-text text-muted">Название товара </small> -->
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Категория товара</label>
+                                <select class="form-control" id="exampleFormControlSelect1" aria-describedby="categoryHelp">
+                                  <option>Ванны</option>
+                                  <option>Кухни</option>
+                                  <option>Плитки</option>
+                                  <option>Слив</option>
+                                  <option>Черепица</option>
+                                </select>
+                                <small id="categoryHelp" class="form-text text-muted">Категория обязательна</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Цена</label>
+                                <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="priceHelp" placeholder="Цена">
+                                <small id="priceHelp" class="form-text text-muted">Цена в леях. Ввод цены не обязателен.</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Изображение товара</label>
+                                <div class="d-flex">
+                                    <div class="form-check mr-3">
+                                        <input class="form-check-input mt-2" type="radio" name="exampleRadios" id="image-location1" value="option1" checked>
+                                        <label class="form-check-label" for="image-location1">
+                                          С компьютера
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input mt-2" type="radio" name="exampleRadios" id="image-location2" value="option2">
+                                        <label class="form-check-label" for="image-location2">
+                                          С интернета
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="browse-wrap from-pc">
+                                    <div class="fileform">
+                                        <div class="selectbutton">Обзор</div>
+                                        <input type="file" name="excel" class="upload" id="upload_contact_sms" onchange="getName(this.value);" accept="image/jpeg,image/png,image/gif">
+                                    </div>
+                                    <div class="fileformlabel" id="fileformlabel"></div>
+                                </div>
+                                <div class="from-internet">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="link-image-internet" aria-describedby="link-internet" placeholder="Ссылка на фото">
+                                        <small id="link-internet" class="form-text text-muted">Вставьте ссылку на фотографию. Обязательно</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-preview mt-4">
+                                <img src="" class="img-fluid w-75">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" product-id="">Добавить</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Отменить</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- Modal basket-->
+        <div class="modal fade" id="Basket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel3">Выбранные товары</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Название</th>
+                            <th scope="col">Изображение</th>
+                            <th scope="col">Цена</th>
+                            <th scope="col">Количество</th>
+                            <th scope="col">Удалить</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th scope="row" colspan="2">Сумма</th>
+                                <td colspan="4" class="all-price">0</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                      
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" product-id="">Купить</button>
+                  <button type="button" class="btn btn-secondary clear-basket" data-dismiss="modal">Очистить</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- Modal Slider Images-->
+        <div class="modal fade" id="showImages" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header px-0">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="false" data-interval="false">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img class="d-block img-fluid w-100" src="" alt="Первый слайд" >
+                                <div class="carousel-caption">
+                                    <h4 class="product-name"></h4>
+                                    <p class="price mt-2"><span></span> Леев</p>
+                                    <button class="btn bg-success text-white in-basket mt-2" data-category-id="" data-product-id="">В корзину</button>
+                                </div>
+                              </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </div>
+                    </div>
+                    <div class="modal-footer py-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row header justify-content-between my-3">
+                <div class="col-auto">
+                    <h4>СТРОЙБАТ</h4>
+                </div>
+                <div class="col-auto row mr-3">
+                    <a href="javascript:void(0)" class="btn" type="button" data-toggle="modal" data-target="#getProductNew">Добавить товар</a>
+                    
+                    <a href="javascript:void(0)" class="position-relative shop-btn ml-5 btn" type="button" data-toggle="modal" data-target="#Basket">
+                        <span class="position-absolute">0</span>
+                        <p class="shop-icon"></p>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto sidebar border-right">
+                    <h5 class="sidebar-heading d-flex justify-content-between align-items-center pb-3 pt-1">
+                        <span>Категории</span>
+                        <a class="d-flex align-items-center text-muted ml-5 new-categ create-new-main-categ" href="javascript:void(0)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                        </a>
+                    </h5>
+                    <ul class="nav flex-column">
+                        <li class=" " data-category-id="1">
+                            <div class="li-head d-flex justify-content-between">
+                                <a class="category" href="javascript:void(0)">Ванна</a>
+                                <a class="d-flex align-items-center text-muted ml-5 new-categ" href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                </a>
+                            </div>
+                            <ul class="subcategs">
+                                <!-- create Sub categ -->
+                                <li class="new-categ-li">
+                                    <input type="text" class="form-control" placeholder="Категория">
+                                </li>
+                                <li class="create-new-categ-btn">
+                                    <button class="btn bg-success text-white" >Добавить</button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=" " data-category-id="2">
+                            <div class="li-head d-flex justify-content-between">
+                                <a class="category" href="javascript:void(0)">Кухня</a>
+                                <a class="d-flex align-items-center text-muted ml-5 new-categ" href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                </a>
+                            </div>
+                            <ul class="subcategs">
+                                <!-- create Sub categ -->
+                                <li class="new-categ-li">
+                                    <input type="text" class="form-control" placeholder="Категория">
+                                </li>
+                                <li class="create-new-categ-btn">
+                                    <button class="btn bg-success text-white" >Добавить</button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=" " data-category-id="3">
+                            <div class="li-head d-flex justify-content-between">
+                                <a class="category" href="javascript:void(0)">Плитка</a>
+                                <a class="d-flex align-items-center text-muted ml-5 new-categ" href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                </a>
+                            </div>
+                            
+                            <ul class="subcategs">
+                                <li data-category-id="3.1"><a class="category" href="javascript:void(0)">Напольная</a></li>
+                                <li data-category-id="3.2"><a class="category" href="javascript:void(0)">Напольна</a></li>
+                                <li data-category-id="3.3"><a class="category" href="javascript:void(0)">Напольн</a></li>
+                                <li data-category-id="3.4"><a class="category" href="javascript:void(0)">Наполь</a></li>
+                                <li data-category-id="3.5"><a class="category" href="javascript:void(0)">Напол</a></li>
+                                <!-- create Sub categ -->
+                                <li class="new-categ-li">
+                                    <input type="text" class="form-control" placeholder="Категория">
+                                </li>
+                                <li class="create-new-categ-btn">
+                                    <button class="btn bg-success text-white" >Добавить</button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=" "  data-category-id="4">
+                            <div class="li-head d-flex justify-content-between">
+                                <a class="category" href="javascript:void(0)">Слив</a>
+                                <a class="d-flex align-items-center text-muted ml-5 new-categ" href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                </a>
+                            </div>
+                            <ul class="subcategs">
+                                <li data-category-id="4.1"><a class="category" href="javascript:void(0)">Слив1</a></li>
+                                <li data-category-id="4.2"><a class="category" href="javascript:void(0)">Слив2</a></li>
+                                <li data-category-id="4.3"><a class="category" href="javascript:void(0)">Слив3</a></li>
+                                <li data-category-id="4.4"><a class="category" href="javascript:void(0)">Слив4</a></li>
+                                <li data-category-id="4.5"><a class="category" href="javascript:void(0)">Слив5</a></li>
+                                <!-- create Sub categ -->
+                                <li class="new-categ-li">
+                                    <input type="text" class="form-control" placeholder="Категория">
+                                </li>
+                                <li class="create-new-categ-btn">
+                                    <button class="btn bg-success text-white" >Добавить</button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=" " data-category-id="5">
+                            <div class="li-head d-flex justify-content-between">
+                                <a class="category" href="javascript:void(0)">Черепица</a>
+                                <a class="d-flex align-items-center text-muted ml-5 new-categ" href="javascript:void(0)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                </a>
+                            </div>
+                            <ul class="subcategs">
+                                <!-- create Sub categ -->
+                                <li class="new-categ-li">
+                                    <input type="text" class="form-control" placeholder="Категория">
+                                </li>
+                                <li class="create-new-categ-btn">
+                                    <button class="btn bg-success text-white" >Добавить</button>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- create main categ -->
+                        <li class="new-categ-li main-categ">
+                            <input type="text" class="form-control" placeholder="Категория">
+                        </li>
+                        <li class="create-new-categ-btn main-categ-btn">
+                            <button class="btn bg-success text-white" >Добавить</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-10 main" data-category-id="1">
+                    <div class="d-flex main-header justify-content-between">
+                        <h2 class="text-center pb-3">Ванны</h2>
+                        <button type="button" class="btn bg-danger text-white ml-2 delete-elem mb-3" data-toggle="modal" data-target="#deleteModal" data-category-id="1">Удалить</button>
+                    </div>
+                    <div class="card-deck row row-cols-md-3">
+                        <div class="col-3 mb-3" >
+                            <div class="card mx-0"  data-category-id="1" data-product-id="1" data-carousel="carousel-item">
+                                <img src="https://avatars.mds.yandex.net/get-mpic/1332324/img_id6732090216245584019.jpeg/9hq" class="card-img-top" alt="..." data-toggle="modal" data-target="#showImages">
+                                <div class="card-body">
+                                  <h5 class="card-title">Название карточки</h5>
+                                  <p class="card-text price"><span>1000</span> леев</p>
+                                </div>
+                                <div class="card-footer ">
+                                  <button class="btn bg-success text-white in-basket" data-category-id="1" data-product-id="1">В корзину</button>
+                                  <button type="button" class="btn bg-danger text-white ml-2 delete-elem" data-toggle="modal" data-target="#deleteModal" data-category-id="1" data-product-id="1">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 mb-3"  >
+                            <div class="card mx-0" data-category-id="1" data-product-id="2" data-carousel="carousel-item">
+                                <img src="img/products/images1.jpg" class="card-img-top" alt="..." data-toggle="modal" data-target="#showImages">
+                                <div class="card-body">
+                                  <h5 class="card-title">Вторая</h5>
+                                  <p class="card-text price"><span>2000</span> леев</p>
+                                </div>
+                                <div class="card-footer ">
+                                  <button class="btn bg-success text-white in-basket" data-category-id="1" data-product-id="2">В корзину</button>
+                                  <button type="button" class="btn bg-danger text-white ml-2 delete-elem" data-toggle="modal" data-target="#deleteModal" data-category-id="1" data-product-id="2">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 mb-3"  >
+                            <div class="card mx-0" data-category-id="1" data-product-id="3" data-carousel="carousel-item">
+                                <img src="img/products/images2.jpg" class="card-img-top" alt="..." data-toggle="modal" data-target="#showImages">
+                                <div class="card-body">
+                                  <h5 class="card-title">тертья</h5>
+                                  <p class="card-text price"><span>3000</span> леев</p>
+                                </div>
+                                <div class="card-footer ">
+                                  <button class="btn bg-success text-white in-basket" data-category-id="1" data-product-id="3">В корзину</button>
+                                  <button type="button" class="btn bg-danger text-white ml-2 delete-elem" data-toggle="modal" data-target="#deleteModal" data-category-id="1" data-product-id="3">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10 main" data-category-id="2">
+                    <div class="d-flex main-header justify-content-between">
+                        <h2 class="text-center pb-3">Кухня</h2>
+                        <button type="button" class="btn bg-danger text-white ml-2 delete-elem mb-3" data-toggle="modal" data-target="#deleteModal" data-category-id="1">Удалить</button>
+                    </div>
+                    <div class="card-deck row row-cols-md-3">
+                        <div class="col-3 mb-3" >
+                            <div class="card mx-0"  data-category-id="1" data-product-id="1" data-carousel="carousel-item">
+                                <img src="https://avatars.mds.yandex.net/get-mpic/1332324/img_id6732090216245584019.jpeg/9hq" class="card-img-top" alt="..." data-toggle="modal" data-target="#showImages">
+                                <div class="card-body">
+                                  <h5 class="card-title">Название карточки</h5>
+                                  <p class="card-text price"><span>1000</span> леев</p>
+                                </div>
+                                <div class="card-footer ">
+                                  <button class="btn bg-success text-white in-basket" data-category-id="1" data-product-id="1">В корзину</button>
+                                  <button type="button" class="btn bg-danger text-white ml-2 delete-elem" data-toggle="modal" data-target="#deleteModal" data-category-id="1" data-product-id="1">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 mb-3"  >
+                            <div class="card mx-0" data-category-id="1" data-product-id="2" data-carousel="carousel-item">
+                                <img src="img/products/images1.jpg" class="card-img-top" alt="..." data-toggle="modal" data-target="#showImages">
+                                <div class="card-body">
+                                  <h5 class="card-title">Вторая</h5>
+                                  <p class="card-text price"><span>2000</span> леев</p>
+                                </div>
+                                <div class="card-footer ">
+                                  <button class="btn bg-success text-white in-basket" data-category-id="1" data-product-id="2">В корзину</button>
+                                  <button type="button" class="btn bg-danger text-white ml-2 delete-elem" data-toggle="modal" data-target="#deleteModal" data-category-id="1" data-product-id="2">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 mb-3"  >
+                            <div class="card mx-0" data-category-id="1" data-product-id="3" data-carousel="carousel-item">
+                                <img src="img/products/images2.jpg" class="card-img-top" alt="..." data-toggle="modal" data-target="#showImages">
+                                <div class="card-body">
+                                  <h5 class="card-title">тертья</h5>
+                                  <p class="card-text price"><span>3000</span> леев</p>
+                                </div>
+                                <div class="card-footer ">
+                                  <button class="btn bg-success text-white in-basket" data-category-id="1" data-product-id="3">В корзину</button>
+                                  <button type="button" class="btn bg-danger text-white ml-2 delete-elem" data-toggle="modal" data-target="#deleteModal" data-category-id="1" data-product-id="3">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</html>
