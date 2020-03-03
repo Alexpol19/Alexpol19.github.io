@@ -17,7 +17,7 @@
 
 4. [English Online](https://alexpol19.github.io/EO/ "English Online") - Layout using only html,css,js/jquery
 
-5.[Stroibat](https://alexpol19.github.io/shopDED/ "Stroibat") - Shop-Stroibat
+5. [Stroibat](https://alexpol19.github.io/shopDED/ "Stroibat") - Shop-Stroibat
 
 
 
