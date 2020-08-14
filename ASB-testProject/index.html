@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>ABS</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="images/asb-logo.png">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/index.css">
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=3b47ed42-94db-47f2-8513-1fdf434988ed&lang=ru_RU" type="text/javascript"></script>
+    </head>
+    <body>
+        <header>
+            <div class="container-lg header__top">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-6 col-sm-4 header__lang">
+                        <a href="javascript:void(0)" class="active">Рус</a>
+                        <a href="javascript:void(0)">Eng</a>
+                    </div>
+                    <div class="col-6 col-sm-4 header__social d-flex justify-content-end">
+                        <a href="javascript:void(0)"><img src="images/facebook.png" alt="facebook img"></a>
+                        <a href="javascript:void(0)"><img src="images/twitter.png" alt="twitter img"></a>
+                        <a href="javascript:void(0)"><img src="images/vk.png" alt="vk img"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid header__bottom">
+                <!-- mobile separately because can't use this navbar for pc version -->
+                <nav class="navbar navbar-expand-md navbar-dark pr-0 d-md-none">
+                    <div class="row justify-content-between align-items-lg-center w-100">
+                        <div class="col-auto mb-2"><a href="javascript:void(0)" class="logo"><img src="images/asb-logo.png" alt="abs-logo" class="img-fluid"></a></div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse flex-wrap align-items-start" id="navbarNav">
+                            <div class="col-12">
+                                <div class="row menu flex-column">
+                                    <a href="javascript:void(0)" class="nav-link">Услуги</a>
+                                    <a href="javascript:void(0)" class="nav-link">О Компании</a>
+                                    <a href="javascript:void(0)" class="nav-link">Цены</a>
+                                    <a href="javascript:void(0)" class="nav-link">Языки</a>
+                                    <a href="javascript:void(0)" class="nav-link">Отзывы</a>
+                                    <a href="javascript:void(0)" class="nav-link">Контакты</a>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <a href="tel:+7 (499) 394-72-94" class="tel">+7 (499) 394-72-94</a>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn mt-3">Быстрый заказ</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </nav>
+                <!-- pc Navbar -->
+                <nav class="container-lg d-none d-md-block">
+                    <div class="row justify-content-center justify-content-sm-between align-items-lg-center">
+                        <div class="col-auto"><a href="javascript:void(0)" class="logo"><img src="images/asb-logo.png" alt="abs-logo" class="img-fluid"></a></div>
+                        <div class="col-9 col-lg-auto order-2 order-lg-1 align-self-center mt-3 mt-lg-0">
+                            <div class="row menu">
+                                <a href="javascript:void(0)" class="col-auto">Услуги</a>
+                                <a href="javascript:void(0)" class="col-auto">О Компании</a>
+                                <a href="javascript:void(0)" class="col-auto">Цены</a>
+                                <a href="javascript:void(0)" class="col-auto">Языки</a>
+                                <a href="javascript:void(0)" class="col-auto">Отзывы</a>
+                                <a href="javascript:void(0)" class="col-auto">Контакты</a>
+                            </div>
+                        </div>
+                        <div class="col-auto order-1 order-lg-2"><a href="tel:+7 (499) 394-72-94" class="tel">+7 (499) 394-72-94</a></div>
+                        <div class="col-auto order-3 col-lg-12 col-xl-auto d-flex justify-content-end mt-3 mt-lg-0"><button class="btn">Быстрый заказ</button></div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <section class="most-categories container-fluid">
+            <div class="container-md">
+                <div class="row justify-content-between text-center ">
+                    <div class="col-12 col-sm-4 most-categories__category">
+                        <img src="images/category1.png" class="img-fluid" alt="categories img">
+                        <h3><a href="javascript:void(0)">Письменный перевод</a></h3>
+                        <p class="price">от <span>650</span> руб/стр</p>
+                    </div>
+                    <div class="col-12 col-sm-4 mt-5 mt-sm-0 most-categories__category">
+                        <img src="images/category2.png" class="img-fluid" alt="categories img">
+                        <h3><a href="javascript:void(0)">Устный перевод</a></h3>
+                        <p class="price">от <span>3700</span> руб/час</p>
+                    </div>
+                    <div class="col-12 col-sm-4 mt-5 mt-sm-0 most-categories__category">
+                        <img src="images/category3.png" class="img-fluid" alt="categories img">
+                        <h3><a href="javascript:void(0)">Апостиль</a></h3>
+                        <p class="price"><span>3900</span> руб/стр</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container-md services">
+            <h2 class="text-center">Другие услуги</h2>
+            <!-- with div -->
+            <div class="row">
+                <div class="col-6 col-sm-3"><a href="javascript:void(0)">Перевод документов</a></div>
+                <div class="col-6 col-sm-3"><a href="javascript:void(0)">Технический перевод</a></div>
+                <div class="col-6 col-sm-3"><a href="javascript:void(0)">Перевод инструкций</a></div>
+                <div class="col-6 col-sm-3"><a href="javascript:void(0)">Перевод текстов</a></div>
+                <div class="col-6 col-sm-3"><a href="javascript:void(0)">Экономический перевод</a></div>
+                <div class="col-6 col-sm-3"><a href="javascript:void(0)">Финансовый перевод</a></div>
+                <div class="col-6 col-sm-3"><a href="javascript:void(0)">Юридический перевод</a></div>
+                <div class="col-6 col-sm-3"><a href="javascript:void(0)">Рекламный перевод</a></div>
+                <div class="col-6 col-sm-3"><a href="javascript:void(0)">Устный перевод</a></div>
+                <div class="col-6 col-sm-3"><a href="javascript:void(0)">Нотариальный перевод</a></div>
+                <div class="col-6 col-sm-3"><a href="javascript:void(0)">Нострификация</a></div>
+                <div class="col-6 col-sm-3"><a href="javascript:void(0)">Корпоративным клиентам</a></div>
+                <div class="col-6 col-sm-3"><a href="javascript:void(0)">Медицинский перевод</a></div>
+            </div>
+            <!-- without div -->
+            <!-- <div class="row">
+                <a href="javascript:void(0)" class="col-3">Перевод документов</a>
+                <a href="javascript:void(0)" class="col-3">Технический перевод</a>
+                <a href="javascript:void(0)" class="col-3">Перевод инструкций</a>
+                <a href="javascript:void(0)" class="col-3">Перевод текстов</a>
+                <a href="javascript:void(0)" class="col-3">Экономический перевод</a>
+                <a href="javascript:void(0)" class="col-3">Финансовый перевод</a>
+                <a href="javascript:void(0)" class="col-3">Юридический перевод</a>
+                <a href="javascript:void(0)" class="col-3">Рекламный перевод</a>
+                <a href="javascript:void(0)" class="col-3">Устный перевод</a>
+                <a href="javascript:void(0)" class="col-3">Нотариальный перевод</a>
+                <a href="javascript:void(0)" class="col-3">Нострификация</a>
+                <a href="javascript:void(0)" class="col-3">Корпоративным клиентам</a>
+                <a href="javascript:void(0)" class="col-3">Медицинский перевод</a>
+            </div> -->
+        </section>
+        <section class="advantages container-fluid">
+            <div class="container-md text-center">
+                <h2>Преимущества компании</h2>
+                <div class="row align-items-start">
+                    <div class="col-12 col-sm-3">
+                        <h3>54</h3>
+                        <h4>Языка перевода</h4>
+                        <p>Наша база переводчиков, одна из самых больших в Москве. Все переводчики профессионалы высокого уровня. </p>
+                    </div>
+                    <div class="col-12 mt-4 mt-sm-0 col-sm-3">
+                        <img src="images/advantage2.png" alt="Advantage img" class="img-fluid">
+                        <h4>Находимся рядом</h4>
+                        <p>Наши офисы находятся в разных точках Москвы, и все находятся недалеко от метро</p>
+                    </div>
+                    <div class="col-12 mt-4 mt-sm-0 col-sm-3">
+                        <img src="images/advantage3.png" alt="Advantage img" class="img-fluid">
+                        <h4>Доступная цена</h4>
+                        <p>Наши цены выгодно отличаются от наших конкурентов, и являются доступными для клиентов</p>
+                    </div>
+                    <div class="col-12 mt-4 mt-sm-0 col-sm-3">
+                        <img src="images/advantage4.png" alt="Advantage img" class="img-fluid">
+                        <h4>Срочные заказы</h4>
+                        <p>Выполняем заказы в короткие сроки и в неочереди, в случае необходимости</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about container-md">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6 order-2 order-lg-1 about__texts">
+                    <h2 class="text-center text-lg-left">Бюро переводов в Москве</h2>
+                    <p>Наша компания - "Агентство сопровождения бизнеса" - занимается переводческими услугами с 2008 года.
+                    </p>
+    
+                    <p>За все это время мы пережили и взлеты, и падения. И то, и другое помогло нам набраться опыта и
+                        расширить спектор наших услуг.
+                    </p>
+    
+                    <p>Наш дружный коллектив состоит из квалифицированных специалистов, которые любят свою работу и поэтому
+                        ежедневно трудятся над тем, чтобы повысить уровень своих знаний - не спят, чтобы дочитать книгу о их
+                        профессией, следят за последними изменениями к требованиям в переводе, легализации, заверении
+                        документов.</p>
+    
+                    <p>Все, что вам нужно, выбрать необходимую для вас услугу и прочитать о ней в соответствующем разделе на
+                        нашем сайте.
+                        Затем вы можете обратиться за заказом в один из наших офисов или оставить заявку через наш сайт.
+                    </p>
+                </div>
+                <div class="col-12 col-lg-6 order-1 order-lg-2 text-center mb-5 mb-lg-0">
+                    <div class="row about__graph justify-content-center">
+                        <h4 class="col-12">За 8 лет мы увеличили объем услуг в 10ть раз</h4>
+                        <div class="col-12">
+                            <canvas id="myChart" width="400" height="140"></canvas>
+                        </div>
+                    </div>
+                    <div class="row about__numbers justify-content-center">
+                        <h4>Несколько наших цифр</h4>
+                        <div class="col-12 d-flex flex-wrap justify-content-center justify-content-sm-between">
+                            <div class="col-6 col-sm-4">
+                                <h3>2450</h3>
+                                <p>Переведенных документа</p>
+                            </div>
+                            <div class="col-6 col-sm-4 clients">
+                                <h3>500</h3>
+                                <p>Наших клиентов</p>
+                            </div>
+                            <div class="col-6 mt-3 mt-sm-0 col-sm-4">
+                                <h3>30 000</h3>
+                                <p>Переведенных страниц</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container-fluid reviews">
+            <div class="container-md">
+                <h2>Отзывы о нас</h2>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="0">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="col-11 col-sm-10 col-md-11 col-xl-9">
+                                    <div class="row justify-content-md-center reviews__slide">
+                                        <!-- <div class="col-auto"> -->
+                                        <div class="col-auto order-2 order-md-1 reviews__author-logo-container">
+                                            <div class="reviews__author-logo" style="background-image: url(images/reviews-author1-bg.jpg);"></div>
+                                        </div>
+                                        <!-- <div class="col-12 col-md-8 col-lg-9 mt-3 mt-md-0"> -->
+                                        <div class="col-12 col-md-8 col-lg-9 order-1 order-md-2 mb-0 mb-sm-3 mb-md-0">
+                                            <div class="reviews__slide-description">
+                                                <p>Хочу отметить работу администратора Андрея, рассчитал мне стоимость перевода в течение 10 минут после размещения заказа, объяснил мне все тонкости нотариального заверения перевода, стоимость меня устроила, я получила качественный перевод в срок и без ошибок.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-11 col-sm-10 col-md-11 col-xl-9">
+                                    <div class="row justify-content-md-center reviews__slide">
+                                        <!-- <div class="col-auto"> -->
+                                        <div class="col-auto order-2 order-md-1 reviews__author-logo-container">
+                                            <div class="reviews__author-logo" style="background-image: url(https://scontent.fkiv1-1.fna.fbcdn.net/v/t31.0-8/s960x960/26063682_1789870554379600_3678332359853547211_o.jpg?_nc_cat=105&_nc_sid=85a577&_nc_ohc=4ECrOP10UqkAX-Z2Gip&_nc_ht=scontent.fkiv1-1.fna&_nc_tp=7&oh=db02b56e4fb460ecf510c568c4303ef8&oe=5F594A5C);"></div>
+                                        </div>
+                                        <!-- <div class="col-12 col-md-8 col-lg-9 mt-3 mt-md-0"> -->
+                                        <div class="col-12 col-md-8 col-lg-9 order-1 order-md-2 mb-0 mb-sm-3 mb-md-0">
+                                            <div class="reviews__slide-description">
+                                                <p>Хочу отметить работу администратора Андрея, рассчитал мне стоимость перевода в течение 10 минут после размещения заказа, объяснил мне все тонкости нотариального заверения перевода, стоимость меня устроила, я получила качественный перевод в срок и без ошибок.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-11 col-sm-10 col-md-11 col-xl-9">
+                                    <div class="row justify-content-md-center reviews__slide">
+                                        <!-- <div class="col-auto"> -->
+                                        <div class="col-auto order-2 order-md-1 reviews__author-logo-container">
+                                            <div class="reviews__author-logo" style="background-image: url(https://scontent.fkiv1-1.fna.fbcdn.net/v/t1.0-9/83391460_1620682838107316_1762566325290401792_n.jpg?_nc_cat=111&_nc_sid=85a577&_nc_ohc=I_OlBFRG2NIAX-xfEq9&_nc_ht=scontent.fkiv1-1.fna&oh=0a05b51aeb4d6d625ace703e48d674ec&oe=5F5AC84F);"></div>
+                                        </div>
+                                        <!-- <div class="col-12 col-md-8 col-lg-9 mt-3 mt-md-0"> -->
+                                        <div class="col-12 col-md-8 col-lg-9 order-1 order-md-2 mb-0 mb-sm-3 mb-md-0">
+                                            <div class="reviews__slide-description">
+                                                <p>Хочу отметить работу администратора Андрея, рассчитал мне стоимость перевода в течение 10 минут после размещения заказа, объяснил мне все тонкости нотариального заверения перевода, стоимость меня устроила, я получила качественный перевод в срок и без ошибок.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <section class="offices container-lg">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h2 class="text-center">Наши офисы</h2>
+                </div>
+                <div class="col-12 col-md-11 col-lg-12 offices__content">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-sm-0">
+                            <div class="row offices__office ">
+                                <div class="col-auto pr-1">
+                                    <div class="offices__logo"></div>
+                                </div>
+                                <div class="col-9 offices__address">
+                                    <h5><a href="javascript:void(0)">м. Новокузнецкая</a></h5>
+                                    <p>Озерковский переулок 
+                                        дом 15 1 подъезд </p>
+                                    <p class="offices__time-travel">5 мин пешком от метро</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-sm-0">
+                            <div class="row offices__office ">
+                                <div class="col-auto pr-1">
+                                    <div class="offices__logo"></div>
+                                </div>
+                                <div class="col-9 offices__address">
+                                    <h5><a href="javascript:void(0)">м. Третьяковская</a></h5>
+                                    <p>Озерковский переулок 
+                                        дом 15 1 подъезд </p>
+                                    <p class="offices__time-travel">7 мин пешком от метро</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-lg-0">
+                            <div class="row offices__office ">
+                                <div class="col-auto pr-1">
+                                    <div class="offices__logo"></div>
+                                </div>
+                                <div class="col-9 offices__address">
+                                    <h5><a href="javascript:void(0)">м. Каширская</a></h5>
+                                    <p>Kaшиpcкoe ш. д.23 </p>
+                                    <p class="offices__time-travel">5 мин пешком от метро</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-3 mt-3 mt-lg-0">
+                            <div class="row offices__office active">
+                                <div class="col-auto pr-1">
+                                    <div class="offices__logo"></div>
+                                </div>
+                                <div class="col-9 offices__address">
+                                    <h5><a href="javascript:void(0)">м. Нагатинская</a></h5>
+                                    <p>ул. Bapшaвcкoe шоссе дом 39  </p>
+                                    <p class="offices__time-travel">1 мин пешком от метро</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div id="map" style="width: 100%; height: 400px;"></div>
+            </div>
+        </section>
+        <footer class="container-fluid">
+            <div class="container-md">
+                <div class="row footer__top">
+                    <div class="col-12">
+                        <div class="row footer__nav justify-content-center align-items-center">
+                            <div class="col-12 col-sm-6 col-lg-3 order-2 order-sm-1 mt-3 mt-sm-0">
+                                <h4>контакты</h4>
+                                <a href="tel:+7 (499) 394-72-94">Тел: +7 (499) 394-72-94</a>
+                                <a href="tel:+7 (499) 394-72-96">Факс: +7 (499) 394-72-96</a>
+                                <a href="mailto:info@asb1.ru">Email: info@asb1.ru</a>
+                            </div>
+                            <div class="col-12 col-sm-6 order-1 order-sm-3 order-lg-1 col-lg-4 mt-0 mt-sm-3 mt-lg-0">
+                                <div class="row">
+                                    <div class="col-12 col-md-9 col-lg-12">
+                                        <h4>Меню</h4> 
+                                        <div class="row">
+                                            <a href="javascript:void(0)" class="col-12 col-sm-6">Услуги</a>
+                                            <a href="javascript:void(0)" class="col-12 col-sm-6">Цены</a>
+                                            <a href="javascript:void(0)" class="col-12 col-sm-6">О компании</a>
+                                            <a href="javascript:void(0)" class="col-12 col-sm-6">Языки</a>
+                                            <a href="javascript:void(0)" class="col-12 col-sm-6">Отзывы </a>
+                                            <a href="javascript:void(0)" class="col-12 col-sm-6">Контакты</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 order-3 order-sm-2 order-lg-2 col-lg-3 mt-3 mt-sm-0">
+                                <h4>Следите за нами</h4>
+                                <a href="javascript:void(0)" class="d-flex align-items-center"><img src="images/vk-grey.png" alt="vk img"><span>Вконтакте</span></a>                               
+                                <a href="javascript:void(0)" class="d-flex align-items-center"><img src="images/twitter-grey.png" alt="twitter img"><span>Twitter</span></a>
+                                <a href="javascript:void(0)" class="d-flex align-items-center"><img src="images/facebook-grey.png" alt="facebook img"><span>Facebook</span></a>
+                            </div>
+                            <div class="col-auto col-sm-6 order-3 col-lg-2 mt-3 mt-lg-0 d-flex justify-content-start justify-content-lg-end">
+                                <a href="javascript:void(0)" class="logo"><img src="images/asb-logo.png" alt="abs-logo" class="img-fluid"></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <p class="text-center footer__bottom">© Бюро переводов ASB.  Все права защищены</p>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="js/chart/Chart.bundle.min.js"></script>
+        <!-- customization chart -->
+        <script src="js/customChart.js"></script>
+        <!-- customization map -->
+        <script src="js/customMap.js"></script>
+
+        <script src="js/index.js"></script>
+    </body>
+</html>
