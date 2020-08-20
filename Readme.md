@@ -3,9 +3,7 @@
 
 ## Portfolio React: 
 
-1. [Admin Panel](https://github.com/Alexpol19/Admin-Panel "Admin Panel") - React+nodejs+mongodb
-
-2. [Clone Instagram](https://github.com/Alexpol19/Clone-instagram "Clone Instagram") - React+api
+1. [Clone Instagram](https://github.com/Alexpol19/Clone-instagram "Clone Instagram") - React+api
 
 ## Portfolio Layout:
 
