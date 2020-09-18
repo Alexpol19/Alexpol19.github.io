@@ -7,7 +7,7 @@
 
 2. [Admin Panel](https://github.com/Alexpol19/Admin-Panel "Admin Panel") - React/redux + node.js/express + mongodb
 
-3. [Social Network](https://github.com/Alexpol19/React-Learn-kama "Social Network") - React/redux + api
+3. [Social Network](https://alexpol19.github.io/React-Learn-kama/ "Social Network") - React/redux + api
 
 ## Portfolio Layout:
 
