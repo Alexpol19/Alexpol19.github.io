@@ -3,7 +3,11 @@
 
 ## Portfolio React: 
 
-1. [Clone Instagram](https://github.com/Alexpol19/Clone-instagram "Clone Instagram") - React+api
+1. [Clone Instagram](https://github.com/Alexpol19/Clone-instagram "Clone Instagram") - React + api
+
+2. [Admin Panel](https://github.com/Alexpol19/Admin-Panel "Admin Panel") - React/redux + node.js/express + mongodb
+
+3. [Social Network](https://github.com/Alexpol19/React-Learn-kama "Social Network") - React/redux + api
 
 ## Portfolio Layout:
 
