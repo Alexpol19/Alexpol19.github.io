@@ -2,12 +2,12 @@
 # Poliuhovici Alexei
 
 ## Portfolio React: 
-1. [Aviasales](https://github.com/Alexpol19/Aviasales "Aviasales") - React,Redux + MaterialUi + api(tickets)
-2. [AdminUi](https://github.com/Alexpol19/AdminUi "AdminUi") - React, Redux + MaterialUi + mock api
+1. [Aviasales](https://github.com/Alexpol19/Aviasales "Aviasales") - Test project created with React, Redux + MaterialUi + api(tickets)
+2. [AdminUi](https://github.com/Alexpol19/AdminUi "AdminUi") - Test project created with React, Redux + MaterialUi + mock api
 
-3. [My ToDo](https://github.com/Alexpol19/MyToDo "My ToDo") - React,Redux + MaterialUi + api(countries)
+3. [My ToDo](https://github.com/Alexpol19/MyToDo "My ToDo") - Test project created with React, Redux + MaterialUi + api(countries)
 
-4. [Clone Instagram](https://github.com/Alexpol19/Clone-instagram "Clone Instagram") - React + api(pictures)
+4. [Clone Instagram](https://github.com/Alexpol19/Clone-instagram "Clone Instagram") - Test project created with React + api(pictures)
 
 5. [Admin Panel](https://github.com/Alexpol19/Admin-Panel "Admin Panel") - React/redux + node.js/express + mongodb
 
@@ -19,7 +19,7 @@
 
 3. [Piroll](https://alexpol19.github.io/Piroll/ "Piroll") - Layout using Sass, pug(sintax), Bootstrap v4.
 
-4. [Simpleat](https://alexpol19.github.io/SimpleatTestWork/ "SimpleatTestWork")
+4. [Simpleat](https://alexpol19.github.io/SimpleatTestWork/ "SimpleatTestWork") - Test Landing
 
 
 
