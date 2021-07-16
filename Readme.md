@@ -2,16 +2,17 @@
 # Poliuhovici Alexei
 
 ## Portfolio React: 
-1. [AdminUi](https://github.com/Alexpol19/AdminUi "AdminUi") - React, Redux + MaterialUi + mock api
+1. [MyShop]- Work project. Online store - React + TypeScript, Redux + MaterialUI
 2. [Aviasales](https://github.com/Alexpol19/Aviasales "Aviasales") - React,Redux + MaterialUi + api(tickets)
+3. [AdminUi](https://github.com/Alexpol19/AdminUi "AdminUi") - React, Redux + MaterialUi + mock api
 
-3. [My ToDo](https://github.com/Alexpol19/MyToDo "My ToDo") - React,Redux + MaterialUi + api(countries)
+4. [My ToDo](https://github.com/Alexpol19/MyToDo "My ToDo") - React,Redux + MaterialUi + api(countries)
 
-4. [Clone Instagram](https://github.com/Alexpol19/Clone-instagram "Clone Instagram") - React + api(pictures)
+5. [Clone Instagram](https://github.com/Alexpol19/Clone-instagram "Clone Instagram") - React + api(pictures)
 
-5. [Admin Panel](https://github.com/Alexpol19/Admin-Panel "Admin Panel") - React/redux + node.js/express + mongodb
+6. [Admin Panel](https://github.com/Alexpol19/Admin-Panel "Admin Panel") - React/redux + node.js/express + mongodb
 
-6. [Social Network](https://github.com/Alexpol19/React-Learn-kama "Social Network") - React/redux + api
+7. [Social Network](https://github.com/Alexpol19/React-Learn-kama "Social Network") - React/redux + api
 
 ## Portfolio Layout:
 
